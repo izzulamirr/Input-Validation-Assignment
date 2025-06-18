@@ -51,10 +51,14 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
+                                    @if(Auth::check())
+                                        <span>{{ Auth::user()->nickname ?? Auth::user()->name }}</span>
+                                    @endif
+                                </a>                                    
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('profile.show') }}">
+                                        {{ __('My Profile') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('todo.index') }}">
                                         {{ __('My Todos') }}
                                     </a>

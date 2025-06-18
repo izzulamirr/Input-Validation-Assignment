@@ -3,14 +3,16 @@
 <div class="container">
   <br>
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h2>Todos List</h2>
-        </div>
-        <div class="col-md-6">
-            <div class="float-right">
-                <a href="{{ route('todo.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add new todo</a>
-            </div>
-        </div>
+        <div class="row mb-4 align-items-center">
+    <div class="col">
+        <h2 class="mb-0"><i class="fa fa-list-check text-primary"></i> Todos List</h2>
+    </div>
+    <div class="col-auto">
+        <a href="{{ route('todo.create') }}" class="btn btn-primary shadow-sm">
+            <i class="fa fa-plus"></i> Add New Todo
+        </a>
+    </div>
+</div>
         <br>
         <div class="col-md-12">
             @if (session('success'))
